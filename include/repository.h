@@ -8,4 +8,9 @@ typedef struct Repository {
     int commitCount;
 } Repository;
 
+void initRepository(Repository* repo);
+void addCommit(Repository* repo, const char* message, const char* hash);
+void printLog(const Repository* repo);
+
+
 #endif
