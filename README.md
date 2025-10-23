@@ -1,13 +1,13 @@
 # Mini Version Control System (MVCS)
 
 ## Overview
-MVCS is a simplified version control system implemented in C for demonstrating Data Structures and Algorithms (DSA) concepts. It tracks:
+MVCS is a simplified version control system implemented in C. It tracks:
 - changes to files,
 - creates commit history,
 - supports branching, and
 - allows restoration of previous versions.
 
-This project showcase the application of core DSA principles in a real-world context.
+This project showcase the application of core DSA principles in a real-world context. It progressively evolves from a basic linked list–based commit tracker into a mini Git-like tool, built entirely from scratch in C.
 
 ---
 
@@ -39,9 +39,18 @@ This project showcase the application of core DSA principles in a real-world con
 
 ---
 
-## DSA Focus
-Each of the planned 6 Stages integrates one or more DSA principles:
-- Linked List for commit chaining.
-- Hashing for quick change detection.
-- Stack for version traversal.
-- Tree/DAG for branching.
+## Current Progress
+
+1. **Implemented**
+
+-  Repository initialization
+- Commit creation and logging
+- Linked list–based commit history
+
+Each commit node stores metadata (ID, message, hash, timestamp) and connects to the previous commit, forming a chain similar to Git’s commit history.
+
+## How to Build and Run
+```bash
+make clean
+make
+./mvcs
