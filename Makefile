@@ -1,12 +1,17 @@
-CC = gcc
-CFLAGS = -Iinclude -Wall
-OBJ = src/main.o src/commit.o src/repository.o src/hash.o
-TARGET = mvcs
+CC = cc
+CFLAGS = -Wall -Wextra -std=c11 -Iinclude
 
-all: $(TARGET)
+SRC = src/cs.c
+OBJ = $(SRC:.c=.o)
 
-$(TARGET): $(OBJ)
-	$(CC) $(OBJ) -o $(TARGET)
+all: cs
+
+cs: $(OBJ)
+	$(CC) $(CFLAGS) -o cs $(OBJ)
 
 clean:
-	rm -f $(OBJ) $(TARGET)
+	rm -f $(OBJ) cs
+
+.PHONY: all clean
+
+

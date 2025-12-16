@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>cs Visualizer - Version Control System</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div id="app">
+    <header>
+      <h1>cs Viewer</h1>
+      <p>Visualizing the internal data structures of the <code>cs</code> version control system.</p>
+      <div class="repo-loader">
+        <label class="button">
+          Load .cs directory
+          <input id="dir-input" type="file" webkitdirectory directory multiple>
+        </label>
+        <span id="repo-status"></span>
+      </div>
+    </header>
+
+    <main>
+      <section id="learning-panel">
+        <h2>Learning mode</h2>
+        <p id="learning-text">
+          Select a commit or file to see how commits, blobs, and the index form a linear history.
+        </p>
+      </section>
+
+      <section id="commit-graph">
+        <h2>Commit graph (linear)</h2>
+        <div id="commit-list"></div>
+      </section>
+
+      <section id="timeline">
+        <h2>Time exploration</h2>
+        <input type="range" id="time-slider" min="0" max="0" value="0">
+        <div id="time-label"></div>
+      </section>
+
+      <section id="filesystem-view">
+        <h2>Three-state file system view</h2>
+        <div class="fs-columns">
+          <div>
+            <h3>Committed (HEAD)</h3>
+            <ul id="fs-committed"></ul>
+          </div>
+          <div>
+            <h3>Staging area (index)</h3>
+            <ul id="fs-staging"></ul>
+          </div>
+          <div>
+            <h3>Working directory (snapshot)</h3>
+            <ul id="fs-working"></ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="algorithm-overlay">
+        <h2>Algorithm steps</h2>
+        <ol id="algorithm-steps"></ol>
+      </section>
+
+      <section id="integrity-view">
+        <h2>Integrity visualization</h2>
+        <div id="integrity-status"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
+
+
